@@ -1,6 +1,6 @@
-package dev.peruch.springcloudnetflixoss.controler;
+package dev.peruch.sub.controller;
 
-import dev.peruch.springcloudnetflixoss.service.SumService;
+import dev.peruch.sub.service.SubService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,17 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
     @Autowired
-    private SumService sumService;
+    private SubService subService;
 
-    @RequestMapping("/sum")
-    public String sum(){
+
+    @RequestMapping("/sub")
+    public String sub(){
         return "Please add two two values on the url \n" +
-               " example: /sum/{firstValue}/{secondValue}";
+                " example: /sub/{firstValue}/{secondValue}";
     }
 
-    @RequestMapping("/sum/{firstValue}/{secondValue}")
-    public String sum(@PathVariable double firstValue,
+    @RequestMapping("/sub/{firstValue}/{secondValue}")
+    public String sub(@PathVariable double firstValue,
                       @PathVariable double secondValue){
-        return sumService.execute(firstValue, secondValue);
+        return subService.execute(firstValue, secondValue);
     }
 }

@@ -1,6 +1,5 @@
 package dev.peruch.springcloudnetflixoss.service;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import dev.peruch.springcloudnetflixoss.business.Sum;
 import org.springframework.stereotype.Service;
 
