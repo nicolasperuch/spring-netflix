@@ -8,3 +8,4 @@
 - Eureka
 - Hystrix
 - Zuul
+- Feign
