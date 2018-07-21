@@ -2,6 +2,7 @@ package dev.peruch.entrypoint.config;
 
 import dev.peruch.entrypoint.service.RequestService;
 import dev.peruch.entrypoint.service.client.FallbackClient;
+import dev.peruch.entrypoint.service.client.SubClient;
 import dev.peruch.entrypoint.service.client.SumClient;
 import feign.Feign;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +21,13 @@ public class Beans {
         return Feign
                 .builder()
                 .target(SumClient.class, "http://localhost:8090");
+    }
+
+    @Bean
+    public SubClient subClient() {
+        return Feign
+                .builder()
+                .target(SubClient.class, "http://localhost:8100");
     }
 
     @Bean

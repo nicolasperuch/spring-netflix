@@ -4,6 +4,6 @@ import feign.RequestLine;
 
 public interface FallbackClient {
 
-    @RequestLine("GET /")
+    @RequestLine("GET")
     String callFallback();
 }
