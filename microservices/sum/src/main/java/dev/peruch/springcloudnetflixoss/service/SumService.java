@@ -13,14 +13,9 @@ public class SumService {
         this.sum = sum;
     }
 
-    @HystrixCommand(fallbackMethod = "reliable")
     public String execute(double firstValue, double secondValue) {
         return "The sum of " + firstValue + " and " + secondValue + " is " +
                 sum.execute(firstValue, secondValue);
-    }
-
-    public String reliable(double firstValue, double secondValue) {
-        return "ERROR";
     }
 
 }
