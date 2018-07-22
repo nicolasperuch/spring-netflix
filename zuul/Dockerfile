@@ -8,8 +8,8 @@ RUN mkdir /opt/app
 
 EXPOSE 8080
 
-ADD build/libs/zuul-0.0.1-SNAPSHOT.jar   /opt/app/zuul-0.0.1-SNAPSHOT.jar
+ADD build/libs/spring-cloud-netflix-oss-0.0.1-SNAPSHOT.jar   /opt/app/spring-cloud-netflix-oss-0.0.1-SNAPSHOT.jar
 
 ENV JAVA_OPTS="-Xmx1g -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSConcurrentMTEnabled"
 
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /opt/app/zuul-0.0.1-SNAPSHOT.jar " ]
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /opt/app/spring-cloud-netflix-oss-0.0.1-SNAPSHOT.jar " ]
